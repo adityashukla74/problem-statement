@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
 import i18n from "i18next";
@@ -26,12 +26,21 @@ i18n
     backend: {
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
-    react: { useSuspense: false }
   });
+const loadFallBack = (
+  <div className='py-4 text-center'>
+    <h4>
+      ...Loading
+    </h4>
+  </div>
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Suspense fallback={loadFallBack}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  </Suspense>,
+
   document.getElementById('root')
 );

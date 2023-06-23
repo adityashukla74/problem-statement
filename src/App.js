@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
-
 const languages = [
   {
     code: 'fr',
@@ -14,11 +13,11 @@ const languages = [
   }
 ]
 function App() {
-
   const { t } = useTranslation();
   const releaseDate = new Date('2023-06-23');
   const timeDifference = new Date() - releaseDate;
   const number_of_days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
   return (
     <div className="container">
       <div className="d-flex justify-content-end">
