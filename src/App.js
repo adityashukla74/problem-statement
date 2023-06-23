@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import i18next from 'i18next';
+import Graph from "./Graph";
 const languages = [
   {
     code: 'fr',
@@ -49,6 +50,9 @@ function App() {
       <div className="d-flex flex-column align-items-start">
         <h1 className="font-weight-normal mb-3">{t('welcome_message')}</h1>
         <p>{t('days_since_release', { number_of_days })}</p>
+      </div>
+      <div>
+        <Graph />
       </div>
     </div>
   )
